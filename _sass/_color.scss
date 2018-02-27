@@ -1,0 +1,39 @@
+$p:                 #4386F1;
+
+$g1:                #6683b1;
+$g2:                #425472;
+
+
+$pd:                #1C3865;
+
+$a1:                #39E8F9;
+$a2:                #329FDA;
+
+$r:                 #F46F5C;
+
+$y1:                #F1B843;
+$y2:                #A5730D;
+
+$cardBg:            linear-gradient(45deg, #e7e7e7, #f7f7f7);
+
+
+h1, h2, h3, h4, h5, h6, p, a {
+    color: $pd;
+}
+
+a {
+    color: $g2;
+
+    &:hover {
+        color: $g1;
+    }
+}
+
+p > a {
+    text-decoration: underline;
+}
+
+
+.color-g1 {
+    color: $g1;
+}

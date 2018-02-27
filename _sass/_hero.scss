@@ -1,0 +1,211 @@
+$slideOfffset:      36px;
+
+// landing
+#nessHeroBg {
+    overflow: hidden;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+
+        transition: opacity 0.9s ease;
+    }
+
+    &.fadeBefore::before {
+        opacity: 0;
+    }
+
+    .nessHeroSlide {  
+        position: absolute;
+        top: 0;
+        left: 120%;
+
+        opacity: 0;
+        transition: opacity 0.6s ease;
+
+        // xs
+        @media (max-width: 575px) {
+            height: 240px;
+        }
+
+        &.on {
+            position: relative;
+            left: 0;
+            opacity: 1;
+
+            .nessHeroCopy {
+                top: 0;
+            }
+        }
+
+        &.out, &.on.out {
+            position: relative;
+            left: 0;
+            opacity: 0;
+
+            .nessHeroCopy {
+                top: $slideOfffset;
+            }
+        }
+
+        .nessHeroCopy {
+            top: $slideOfffset;
+            transition: top 0.6s ease;
+
+            z-index: 1;
+
+            // xs
+            @media (max-width: 575px) {
+                margin-top: 2rem;
+
+                text-align: center;
+            }
+
+            h2 {
+                font-weight: 400;
+                text-shadow: 0 2px 0 $g2;
+
+                // lg
+                @media (max-width: 1199px) {
+                    font-size: 4.5rem;
+                }
+
+                // md
+                @media (max-width: 991px) {
+                    font-size: 3.5rem;
+                }
+
+                // sm
+                @media (max-width: 767px) {
+                    font-size: 2.5rem;
+                }
+
+                // xs
+                @media (max-width: 575px) {
+                    font-size: 2rem;
+                }
+            }
+
+            .lead {
+                // xs
+                @media (max-width: 575px) {
+                    color: #eee;
+                }
+            }
+        }
+
+        .nessHeroImg {
+            // xs
+            @media (max-width: 575px) {
+                position: absolute;
+
+                height: 100%;
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    max-width: unset;
+                }
+            }
+        }
+    }
+
+    .nessSliderControl {
+        position: absolute;
+        top: 0;
+
+        z-index: 1;
+
+        height: 100%;
+
+        &#nessSliderControlWrapLeft {
+            left: 0;
+        }
+
+        &#nessSliderControlWrapRight {
+            right: 0;
+        }
+
+        .fa {
+            opacity: 0.3;
+
+            font-size: 36px;
+            color: $g2;
+
+            cursor: pointer;
+
+            &:hover {
+                color: $pd;
+            }
+        }
+    }
+}
+
+#nessHeroBg {
+    &.heroBluePrimary {
+        &::before {
+            background-color: $p;
+            background-image: linear-gradient(45deg, $p, $a1);
+        }
+    }
+    &.to-heroBluePrimary {
+        background-color: $p;
+        background-image: linear-gradient(45deg, $p, $a1);
+    }
+
+
+    &.heroYellowRed {
+        &::before {
+            background-color: $y1;
+            background-image: linear-gradient(45deg, $y1, $r);
+        }
+    }
+    &.to-heroYellowRed {
+        background-color: $y1;
+        background-image: linear-gradient(45deg, $y1, $r);
+    }
+
+
+    &.heroBlueYellow {
+        &::before {
+            background-color: $a1;
+            background-image: linear-gradient(45deg, $a1, $y1);
+        }
+    }
+    &.to-heroBlueYellow {
+        background-color: $a1;
+        background-image: linear-gradient(45deg, $a1, $y1);
+    }
+}
+
+
+//header
+.nessHeader {
+    h1 {
+        color: #fff;
+    }
+
+    .nessHeaderBg {
+        background-image: linear-gradient(45deg, $p, $a1);
+
+        > .row {
+            background-image: url("../img/teachBg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right bottom;
+
+//            border-bottom: solid 4px $y1;
+        }
+    }
+}

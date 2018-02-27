@@ -1,0 +1,29 @@
+.cardTrips {
+    // sm
+    @media (min-width: 576px) and (max-width: 767px) {
+        &.nessCardSm {
+            h3 {
+                font-size: 0.7rem;
+            }
+
+            p, a {
+                font-size: 12px;
+            }
+        }
+    }
+
+    // md
+    @media (min-width: 768px) {
+        min-height: 235px;
+    }
+
+    // lg
+    @media (min-width: 992px) {
+        min-height: 315px;
+    }
+
+    // xl
+    @media (min-width: 1200px) {
+        min-height: 375px;
+    }
+}
